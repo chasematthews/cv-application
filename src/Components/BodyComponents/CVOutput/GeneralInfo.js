@@ -4,7 +4,6 @@ class CVOutputGeneralInfo extends Component {
 
     render() {
         const {infoProps} = this.props;
-        console.log(infoProps)
 
         return (
             <div>
