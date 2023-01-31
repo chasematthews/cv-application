@@ -1,15 +1,15 @@
 import React, {Component} from 'react';
 
-class WorkExperience extends Component {
+class EducationExperience extends Component {
 
     constructor() {
         super();
         this.state = {
-            customDiv: ['WorkExperience1']
+            customDiv: ['EducationExperience1']
         }
     }
 
-    addWorkExperience = (event) => {
+    addEducationExperience = (event) => {
         event.preventDefault();
         let cDivs = [...this.state.customDiv];
         cDivs.push('newDiv')
@@ -21,21 +21,21 @@ class WorkExperience extends Component {
 
     render() {
         return (
-            <div className='work-experience'>
-                <h3>Work Experience</h3>
-                {this.state.customDiv.map((workExperience, i) => {
+            <div className='education-experience'>
+                <h3>Education Experience</h3>
+                {this.state.customDiv.map((educationExperience, i) => {
                     return (
-                        <div className='work-experience-input'>
-                            <h4 className='work-experience-input-title'>Work Experience {i+1}</h4>
-                            <form action="" key={workExperience}>
+                        <div className='education-experience-input'>
+                            <h4 className='education-experience-input-title'>Education Experience {i+1}</h4>
+                            <form action="" key={educationExperience}>
                                 <div className='form-row'>
                                     <div className='form-column'>
-                                        <h5>Company</h5>
+                                        <h5>School</h5>
                                         <input
                                             type = 'text'
                                             name = 'company'
                                         />
-                                        <h5>Job Title</h5>
+                                        <h5>Degree</h5>
                                         <input
                                             type='text'
                                             name='jobTitle'
@@ -54,19 +54,14 @@ class WorkExperience extends Component {
                                         />
                                     </div>
                                 </div>
-                                <h5>Job Description</h5>
-                                <textarea
-                                    type='text'
-                                    name='jobDescription'
-                                />
                             </form>
                         </div>
                     )
                 })}
-                    <button onClick = {(event) => this.addWorkExperience(event)}>Add Work Experience</button>
+                    <button onClick = {(event) => this.addEducationExperience(event)}>Add Education Experience</button>
             </div>
         )
     }
 }
 
-export default WorkExperience
+export default EducationExperience
