@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
 import CVInput from './BodyComponents/CVInput'
 import CVOutput from './BodyComponents/CVOutput'
+import CVInfo from './Utils/CVInfo';
 
 class Body extends Component {
 
     constructor() {
         super();
 
-        this.state = {
-            name: '',
-            email: '',
-            mobile: ''
-        }
+        this.state = CVInfo.personalInfo;
     }
 
     handleChange = (event) => {

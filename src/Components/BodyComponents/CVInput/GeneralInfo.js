@@ -28,6 +28,27 @@ class GeneralInfo extends Component {
                     type='text'
                     name='mobile'
                 />
+                <h3>Address</h3>
+                <input
+                    onChange={(event) => handleChange(event)}
+                    value={infoProps.address.text}
+                    type='text'
+                    name='address'
+                />
+                <h3>Linkedin Link</h3>
+                <input
+                    onChange={(event) => handleChange(event)}
+                    value={infoProps.linkedin.text}
+                    type='text'
+                    name='linkedin'
+                />
+                <h3>Github Link</h3>
+                <input
+                    onChange={(event) => handleChange(event)}
+                    value={infoProps.github.text}
+                    type='text'
+                    name='github'
+                />
                 <button type='submit'>Submit</button>
             </form>
         )
