@@ -3,12 +3,12 @@ import CVOutputGeneralInfo from './CVOutput/GeneralInfo'
 
 class CVOutput extends Component {
     render() {
-        const {infoProps} = this.props;
-
+        const personalProps = this.props.infoProps.personalInfo;
+        
         return (
             <div className='CVInputOutput'>
                 <h2>CV Output</h2>
-                <CVOutputGeneralInfo infoProps={infoProps}/>
+                <CVOutputGeneralInfo personalProps={personalProps}/>
             </div>
         )
     }

@@ -6,6 +6,13 @@ const CVInfo = {
         address: '',
         linkedin: '',
         github: '',
+    },
+    workExperience: {
+        company: '',
+        jobTitle: '',
+        jobDescription: '',
+        startDate: '',
+        endDate: '',
     }
 }
 

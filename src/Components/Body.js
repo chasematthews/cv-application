@@ -8,7 +8,7 @@ class Body extends Component {
     constructor() {
         super();
 
-        this.state = CVInfo.personalInfo;
+        this.state = CVInfo;
     }
 
     handleChange = (event) => {
@@ -16,11 +16,15 @@ class Body extends Component {
         const value = event.target.value;
 
         this.setState({
-            [name]: value
+            personalInfo: {
+                ...this.state.personalInfo,
+                [name]: value,
+            }
         })
     }
 
     render() {
+
         return (
             <div className='body'>
                 <CVInput onChange={this.handleChange} infoProps={this.state}/>
