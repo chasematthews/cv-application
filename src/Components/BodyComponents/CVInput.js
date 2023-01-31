@@ -3,27 +3,9 @@ import GeneralInfo from './CVInput/GeneralInfo'
 
 class CVInput extends Component {
 
-    constructor() {
-        super();
-
-        this.state = {
-            name: '',
-            email: '',
-            mobile: ''
-        }
-    }
-
-    render() {
-        const handleChange = (event) => {
-            const name = event.target.name;
-            const value = event.target.value;
-    
-            this.setState({
-                [name]: value
-            })
-        }
-    
-        const infoProps = this.state;
+    render() {   
+        const infoProps = this.props.infoProps;
+        const handleChange = this.props.onChange;
     
         return (
             <div className='CVInputOutput'>

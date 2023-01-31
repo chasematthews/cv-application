@@ -1,13 +1,17 @@
-import React from 'react';
-import GeneralInfo from './CVOutput/GeneralInfo';
+import React, {Component} from 'react';
+import CVOutputGeneralInfo from './CVOutput/GeneralInfo'
 
-const CVOutput = () => {
-    return (
-        <div className='CVInputOutput'>
-            <h2>CV Output</h2>
-            <GeneralInfo />
-        </div>
-    )
+class CVOutput extends Component {
+    render() {
+        const {infoProps} = this.props;
+
+        return (
+            <div className='CVInputOutput'>
+                <h2>CV Output</h2>
+                <CVOutputGeneralInfo infoProps={infoProps}/>
+            </div>
+        )
+    }
 }
 
 export default CVOutput;

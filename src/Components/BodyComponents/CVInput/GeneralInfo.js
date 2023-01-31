@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import CVOutputGeneralInfo from '../CVOutput/GeneralInfo';
 
 class GeneralInfo extends Component {
     render() {
@@ -30,7 +29,6 @@ class GeneralInfo extends Component {
                     name='mobile'
                 />
                 <button type='submit'>Submit</button>
-                <CVOutputGeneralInfo infoProps = {infoProps}/>
             </form>
         )
     }
