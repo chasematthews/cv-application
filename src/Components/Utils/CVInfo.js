@@ -1,4 +1,4 @@
-const CVInfo = {
+const CVTemplate = {
     personalInfo: {
         name: '',
         email: '',
@@ -16,4 +16,4 @@ const CVInfo = {
     }
 }
 
-export default CVInfo;
+export default CVTemplate;

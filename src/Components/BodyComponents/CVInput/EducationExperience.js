@@ -1,29 +1,19 @@
-import React, {Component} from 'react';
+import React, {useState} from 'react';
 
-class EducationExperience extends Component {
+const EducationExperience = () => {
+    const [div, setDiv] = useState({customDiv: ['EducationExperience1']})
 
-    constructor() {
-        super();
-        this.state = {
-            customDiv: ['EducationExperience1']
-        }
-    }
-
-    addEducationExperience = (event) => {
+    const addEducationExperience = (event) => {
         event.preventDefault();
-        let cDivs = [...this.state.customDiv];
+        let cDivs = div.customDiv
         cDivs.push('newDiv')
-        this.setState({
-            customDiv: cDivs
-        })
-        console.log(this.state)
+        setDiv({customDiv: cDivs})
     }
 
-    render() {
-        return (
-            <div className='education-experience'>
+    return (
+        <div className='education-experience'>
                 <h3>Education Experience</h3>
-                {this.state.customDiv.map((educationExperience, i) => {
+                {div.customDiv.map((educationExperience, i) => {
                     return (
                         <div className='education-experience-input'>
                             <h4 className='education-experience-input-title'>Education Experience {i+1}</h4>
@@ -58,10 +48,9 @@ class EducationExperience extends Component {
                         </div>
                     )
                 })}
-                    <button onClick = {(event) => this.addEducationExperience(event)}>Add Education Experience</button>
+                    <button onClick = {(event) => addEducationExperience(event)}>Add Education Experience</button>
             </div>
-        )
-    }
+    )
 }
 
 export default EducationExperience

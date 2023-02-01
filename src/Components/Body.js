@@ -1,39 +1,31 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import CVInput from './BodyComponents/CVInput'
 import CVOutput from './BodyComponents/CVOutput'
-import CVInfo from './Utils/CVInfo';
+import CVTemplate from './Utils/CVInfo';
 
-class Body extends Component {
+const Body = () => {
+    const [CVInfo, setCVInfo] = useState(CVTemplate);
 
-    constructor() {
-        super();
-
-        this.state = CVInfo;
-    }
-
-    handleChange = (event) => {
+    const handleChange = (event) => {
         const name = event.target.name;
         const value = event.target.value;
 
-        this.setState({
+        setCVInfo({
             personalInfo: {
-                ...this.state.personalInfo,
+                ...CVInfo.personalInfo,
                 [name]: value,
             }
         })
 
-        console.log(this.state)
+        console.log(CVInfo)
     }
 
-    render() {
-
-        return (
-            <div className='body'>
-                <CVInput onChange={this.handleChange} infoProps={this.state}/>
-                <CVOutput infoProps={this.state}/>
-            </div>
-        )
-    }
+    return (
+        <div className='body'>
+            <CVInput onChange={handleChange} infoProps={CVInfo}/>
+            <CVOutput infoProps={CVInfo}/>
+        </div>
+    )
 }
 
 export default Body;
